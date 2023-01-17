@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body style='background-color: black;'>
+
+    <div style='display: flex; flex-direction: column; width: 100vw; height: 100vh; align-items: center;'>
+        <h1 style="color: cadetblue;">Login Page</h1>
+        <button style='margin-top: 30vh; width: 10vw; height: 4vw; font-size: 2vw; border-radius: 15px;
+                       border: 3px solid red; background-color: cadetblue;'
+                       onclick="getIdentity()">Login</button>
+    </div>
+    <script>
+        async function getIdentity() {
+            const post = await fetch("https://github.com/login/oauth/authorize?" + 
+            new URLSearchParams({
+                client_id: '4bfed6c21d4c0effd02b',
+                state: 'lothric987278999',
+                redirect_url: 'http://localhost:8589/oauth/redirect',
+                scope: 'repo'
+            }))
+            .then((res) => {console.log(res); window.open(res.url)})
+            .catch((err) => console.log(err));
+        }
+    </script>
+
+</body>
+</html>
