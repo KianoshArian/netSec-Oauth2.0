@@ -20,7 +20,7 @@ def oauth_redirect(code: str):
 	print(f'Github code is: {code}')
 	reqTokenParams={
 		'client_id': '4bfed6c21d4c0effd02b',
-		'client_secret': '7853b66ff3b046ab3e15dfb389385d10309d54df',
+		'client_secret': '***************',
 		'code': code
 	}
 	r = requests.post('https://github.com/login/oauth/access_token', params=reqTokenParams)
